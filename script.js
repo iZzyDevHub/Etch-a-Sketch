@@ -22,7 +22,7 @@ function createGrid(squaresPerSide) {
 
 }
 
-const resetButton = document.querySelector('reset-button');
+const resetButton = document.querySelector('#reset-button');
 resetButton.addEventListener('click', () => {
     const userPrompt = prompt('Enter the number of squares per side (max 100): ');
     const squaresPerSide = parseInt(userPrompt);
