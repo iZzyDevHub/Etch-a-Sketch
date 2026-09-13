@@ -3,7 +3,7 @@ const container = document.getElementById('container');
 
 function createGrid(squaresPerSide) {
     container.innerHTML = '';
-    const totalSquares = squaresPerSide * squarePerSide;
+    const totalSquares = squaresPerSide * squaresPerSide;
     const squaresize = 960 / squaresPerSide;
 
     for (let i = 0; i < totalSquares; i++) {
@@ -24,8 +24,11 @@ function createGrid(squaresPerSide) {
 
 const resetButton = document.querySelector('reset-button');
 resetButton.addEventListener('click', () => {
-    const squaresPerSide = prompt('Enter the number of squares per side (max 100): ');
-    
-})
-
-createGrid(16);
+    const userPrompt = prompt('Enter the number of squares per side (max 100): ');
+    const squaresPerSide = parseInt(userPrompt);
+    if(squaresPerSide > 0 && squaresPerSide <= 100) {
+        createGrid(squaresPerSide);
+    }else {
+        alert('Please enter a valid number between 1 and 100.');
+    }
+});
